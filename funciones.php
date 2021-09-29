@@ -64,12 +64,15 @@
                 $resultado1 = $conexion->query($consulta1);
                 $consulta2 = "SELECT register FROM iniciosesion WHERE nombre='$objeto->nombre'";
                 $resultado2 = $conexion->query($consulta2);
-                if ($resultado2 == 0){
+                if ($resultado2 == false){
                     $_SESSION["primeregistro"] = false;
+                    print $resultado2;
                       //zero = false
                       //one = true
                 }else{
                     $_SESSION["primeregistro"] = true; 
+                    print $resultado2;
+
                 }
 
                 if ($resultado1->num_rows > 0) {
@@ -115,7 +118,6 @@
 
     }
     class Objeto{}
-
 
 
 ?>

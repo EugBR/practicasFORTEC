@@ -21,12 +21,7 @@ session_start();
           <div class="col-sm-8">
             <input type="file" class="form-control" id="image" name="image" multiple>
           </div>
-          <br>
-
-          <label class="col-sm-2 control-label">Fecha de nacimiento</label>
-          <div class="col-sm-8">
-            <input type="date" class="form-control" id="date" name="date" multiple>
-          </div>
+          
           <br>
 
 

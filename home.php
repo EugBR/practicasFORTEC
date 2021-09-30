@@ -35,7 +35,8 @@ if ($_SESSION['logged_in'] == false){
     <a class="" href="perfil.php">Perfil</a>
     <a class="" href="config.php">Configuracion</a>
 
-    <a style="float: right; padding-right: 1em;" href="terminarSesion.php"><img src="power.png" width="20" height="20"></a>
+    <a style="float: right; padding-right: 1em;" href="terminarSesion.php"><img src="power.png" width="20"
+        height="20"></a>
   </div>
 
   <div style="padding-left:16px">
@@ -44,10 +45,17 @@ if ($_SESSION['logged_in'] == false){
     <?php
     // Starting session
     $nombre = $_SESSION["firstname"];
-
-
     echo 'Hola, ' . $nombre;
+
   ?>
+    <div class="main">
+      <h1>Mostrando imagen almacenada en MySQL</h1>
+      <div class="panel panel-primary">
+        <div class="panel-body">
+          <img src='vista.php?id=4' alt='Img blob desde MySQL' width="600" />
+        </div>
+      </div>
+    </div>
 
     <p></p>
   </div>

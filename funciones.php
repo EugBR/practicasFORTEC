@@ -35,6 +35,7 @@
                 if ($resultado->num_rows > 0) {
                     echo "Usuario ya existente";
                 }else{
+                    
                     mysqli_query($conexion, "SET FOREIGN_KEY_CHECKS=0;");
                     $insertar2 = "INSERT INTO `mydb`.`imagenes` (`nombree`) VALUES ('$objeto->nombre');";
                     $insertar = "INSERT INTO iniciosesion (nombre, contrasena)

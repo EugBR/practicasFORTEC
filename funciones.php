@@ -71,7 +71,6 @@
                       //one = true
                 }else{
                     $_SESSION["primeregistro"] = true; 
-                    print $resultado2;
 
                 }
 

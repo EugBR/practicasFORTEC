@@ -12,7 +12,7 @@ if ($_SESSION['logged_in'] == false){
   header("Location: index.php");
   die();
   session_destroy();
-}elseif($_SESSION["primeregistro"] == true){
+}elseif($_SESSION["primeregistro"] == 0){
   header("Location: primerRegistro.php");
 
 }

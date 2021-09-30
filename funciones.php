@@ -64,13 +64,15 @@
                 $resultado1 = $conexion->query($consulta1);
                 $consulta2 = "SELECT register FROM iniciosesion WHERE nombre='$objeto->nombre'";
                 $resultado2 = $conexion->query($consulta2);
-                if ($resultado2 == false){
-                    $_SESSION["primeregistro"] = false;
-                    print $resultado2;
+                $resultado2 = mysqli_fetch_array($resultado2);
+
+                
+                if ($resultado2['register'] == 1){
+                    $_SESSION["primeregistro"] = 1;
                       //zero = false
                       //one = true
                 }else{
-                    $_SESSION["primeregistro"] = true; 
+                    $_SESSION["primeregistro"] = 0; 
 
                 }
 

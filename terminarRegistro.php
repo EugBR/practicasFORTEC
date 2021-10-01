@@ -7,14 +7,13 @@
     $usuario = "root";
     $contrasena = "";
     $baseDeDatos = "mydb";
-    $fileName = basename($_FILES["image"]["name"]);
+
     if(isset($_POST["submit"])){
         $revisar = getimagesize($_FILES["image"]["tmp_name"]);
         if($revisar !== false){
             $nombre = $_SESSION["firstname"];
             $image = $_FILES['image']['tmp_name'];
             $imgContenido = addslashes(file_get_contents($image));
-
             
             
             $conexion = mysqli_connect($servidor, $usuario, $contrasena,$baseDeDatos) or die("ERROR AL CONECTAR CON LA BASE DE DATOS");
@@ -32,8 +31,7 @@
 
             echo "<br>";
 
-
-            $insertar = $conexion->query("INSERT into images (file_name) VALUES ('"$fileName"')");
+            $insertar = $conexion->query("UPDATE `mydb`.`imagenes` SET imagenes=$imgContenido  WHERE (nombree = '$nombre')");
             if($insertar){
                 echo "Archivo Subido Correctamente.";
             }else{
@@ -44,7 +42,7 @@
             // Sie el usuario no selecciona ninguna imagen
 
     
-        /*
+        
             $consult = "UPDATE iniciosesion SET register = '1' WHERE nombre = '$nombre'"; 
             $consulta2 = "SELECT register FROM iniciosesion WHERE nombre='$objeto->nombre'";
         
@@ -54,7 +52,7 @@
         
             $_SESSION["primeregistro"] = 1;
         
-            header("Location: home.php");*/
+            header("Location: home.php");
         }else{
             echo "Por favor seleccione imagen a subir.";
         }
